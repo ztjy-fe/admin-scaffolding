@@ -1,5 +1,6 @@
 <template>
 	<el-menu class="navbar" mode="horizontal">
+		<hamburger class="hamburger-container" :toggleClick="toggleSideBar" :isActive="sidebar.opened"></hamburger>
 		<breadcrumb></breadcrumb>
 		<el-dropdown class="avatar-container" trigger="click">
 			<div class="avatar-wrapper">
@@ -21,22 +22,30 @@
 </template>
 
 <script>
+import Hamburger from '@/components/hamburger'
 import Breadcrumb from '@/components/breadcrumb'
-import { mapActions } from 'vuex'
+import { mapActions, mapGetters } from 'vuex'
 
 export default {
 	components: {
-		Breadcrumb
+		Breadcrumb,
+		Hamburger
 	},
 	methods: {
 		...mapActions({
-			logout: 'User/logout'
+			logout: 'User/logout',
+			toggleSideBar: 'SideBar/toggleSideBar'
 		}),
 		logoutHandler () {
 			this.logout().then(() => {
-				window.location.reload()
+				window.location.reload() // 为了重新实例化vue-router对象 避免bug
 			})
 		}
+	},
+	computed: {
+		...mapGetters({
+			sidebar: 'SideBar/getSidebar'
+		})
 	}
 }
 </script>

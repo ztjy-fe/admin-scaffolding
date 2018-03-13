@@ -117,11 +117,11 @@ return a === b
 最后,提交到github自己的分支上，就可以使用了
 
 ```
-vue init ztjy-fe/scaffolding project-name
+vue init ztjy-fe/admin-scaffolding project-name
 
 ```
 #### github地址
-[https://github.com/ztjy-fe/scaffolding](https://github.com/ztjy-fe/scaffolding)
+[https://github.com/ztjy-fe/admin-scaffolding](https://github.com/ztjy-fe/admin-scaffolding)
 
 #### 参考：  
 [vue-cli webpack的配置详解](http://blog.csdn.net/hongchh/article/details/55113751 )  

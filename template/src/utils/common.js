@@ -1,21 +1,18 @@
-
-import { USER_TOKEN } from '@/maps/constants'
-
 // 引入szyutils公用工具库
 const getCookie = require('szyutils/modules/getCookie')
 const setCookie = require('szyutils/modules/setCookie')
 const removeCookie = require('szyutils/modules/removeCookie')
 
 export default {
-	getToken () {
-		return getCookie(USER_TOKEN)
+	getCookie (name) {
+		return getCookie(name)
 	},
 
-	setToken (token) {
-		return setCookie(USER_TOKEN, token, 10)
+	setCookie (name, value) {
+		return setCookie(name, value, 10)
 	},
 
-	removeToken () {
-		return removeCookie(USER_TOKEN)
+	removeCookie (name) {
+		return removeCookie(name)
 	}
 }

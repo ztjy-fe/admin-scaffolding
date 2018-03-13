@@ -19,6 +19,7 @@ export default [{
 }, {
 	path: '/form',
 	component: Layout,
+	icon: 'fa fa-user',
 	children: [{
 		path: 'index',
 		name: 'Form',
@@ -30,6 +31,7 @@ export default [{
 }, {
 	path: '/table',
 	component: Layout,
+	icon: 'fa fa-comment',
 	children: [{
 		path: 'index',
 		name: 'Table',

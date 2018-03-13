@@ -6,11 +6,12 @@ import NProgress from 'nprogress'
 import 'nprogress/nprogress.css'
 import { Message } from 'element-ui'
 import Common from '@/utils/common'
+import { USER_TOKEN } from '@/maps/constants'
 
 const whiteList = ['/login'] // 不重定向白名单
 router.beforeEach((to, from, next) => {
 	NProgress.start()
-	if (Common.getToken()) {
+	if (Common.getCookie(USER_TOKEN)) {
 		if (to.path === '/login') {
 			next({ path: '/' })
 		} else {

@@ -42,7 +42,6 @@ export default {
 </script>
 
 <style rel="stylesheet/scss" lang="scss" scoped>
-
 .scroll-container {
 	position: relative;
 	width: 100%;

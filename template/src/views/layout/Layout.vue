@@ -1,5 +1,5 @@
 <template>
-	<div class="app-wrapper">
+	<div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}">
 		<sidebar class="sidebar-container"></sidebar>
 		<div class="main-container">
 			<navbar></navbar>
@@ -9,7 +9,10 @@
 </template>
 
 <script>
-import { Navbar, Sidebar, AppMain } from '@/views/layout/components'
+import { mapGetters } from 'vuex'
+import Navbar from '@/views/layout/components/Navbar.vue'
+import Sidebar from '@/views/layout/components/Sidebar/index.vue'
+import AppMain from '@/views/layout/components/AppMain.vue'
 
 export default {
 	name: 'layout',
@@ -17,6 +20,11 @@ export default {
 		Navbar,
 		Sidebar,
 		AppMain
+	},
+	computed: {
+		...mapGetters({
+			sidebar: 'SideBar/getSidebar'
+		})
 	}
 }
 </script>
