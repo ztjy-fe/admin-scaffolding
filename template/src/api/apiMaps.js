@@ -1,4 +1,4 @@
-{{#if_eq proType "admin"}}
+
 const currentHost = window.location.host
 let prefix = 'dev'
 if (currentHost.indexOf('-') > -1) {
@@ -35,7 +35,3 @@ export const SYSTEM = {
 		LOGOUT: path('/user/logout')
 	}
 }
-{{/if_eq}}
-{{#if_eq proType "mobile"}}
-export const SYSTEM = {}
-{{/if_eq}}

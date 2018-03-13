@@ -1,4 +1,4 @@
-{{#if_eq proType "admin"}}
+
 import { API } from './api'
 import { SYSTEM } from './apiMaps'
 
@@ -13,7 +13,3 @@ export default {
 		return API.post(SYSTEM.USER.LOGOUT, params, callback)
 	}
 }
-{{/if_eq}}
-{{#if_eq proType "mobile"}}
-export default {}
-{{/if_eq}}

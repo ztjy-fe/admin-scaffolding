@@ -13,17 +13,13 @@
 	"dependencies": {
 		"axios": "^0.18.0",
 		"babel-polyfill": "^6.26.0",
-		{{#if_eq proType "admin"}}
 		"element-ui": "2.0.8",
-		{{/if_eq}}
 		{{#fundebug}}
 		"fundebug-javascript": "^0.3.4",
 		{{/fundebug}}
 		"mockjs": "^1.0.1-beta3",
-		{{#if_eq proType "admin"}}
 		"normalize.css": "7.0.0",
 		"nprogress": "0.2.0",
-		{{/if_eq}}
 		"vue": "^2.5.2",
 		"vue-router": "^3.0.1",
 		"vuex": "^3.0.1"
@@ -53,9 +49,6 @@
 		"eslint-plugin-vue": "^4.0.0",
 		"eslint-plugin-html": "4.0.1",
 		"extract-text-webpack-plugin": "^3.0.0",
-		{{#if_eq proType "mobile"}}
-		"fastclick": "^1.0.6",
-		{{/if_eq}}
 		"file-loader": "^1.1.4",
 		"friendly-errors-webpack-plugin": "^1.6.1",
 		"html-webpack-plugin": "^2.30.1",
@@ -66,9 +59,6 @@
 		"portfinder": "^1.0.13",
 		"postcss-import": "^11.0.0",
 		"postcss-loader": "^2.0.8",
-		{{#if_eq proType "mobile"}}
-		"postcss-px2rem": "^0.3.0",
-		{{/if_eq}}
 		"postcss-url": "^7.2.1",
 		"rimraf": "^2.6.0",
 		"sass-loader": "^6.0.7",

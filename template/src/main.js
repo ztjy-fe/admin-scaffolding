@@ -7,27 +7,17 @@ import Vuex from 'vuex'
 {{#VueLazyload}}
 import VueLazyload from 'vue-lazyload'
 {{/VueLazyload}}
-{{#if_eq proType "admin"}}
 import ElementUI from 'element-ui'
 import 'element-ui/lib/theme-chalk/index.css'
 // 全局样式
 import '@/assets/scss/index.scss'
 // 路由鉴权
 import '@/utils/permission'
-{{/if_eq}}
-{{#if_eq proType "mobile"}}
-import FastClick from 'fastclick'
-{{/if_eq}}
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
 
-{{#if_eq proType "admin"}}
 Vue.use(ElementUI)
-{{/if_eq}}
-{{#if_eq proType "mobile"}}
-FastClick.attach(document.body)
-{{/if_eq}}
 
 {{#fundebug}}
 // apikey 可根据实际情况填写

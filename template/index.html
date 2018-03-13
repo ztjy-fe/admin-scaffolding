@@ -2,43 +2,19 @@
 <html lang="zh-CN">
 	<head>
 		<meta charset="UTF-8">
-		{{#if_eq proType "admin"}}
 		<meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
 		<meta name="keywords" content="your keywords">
 		<meta name="description" content="your description">
 		<meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1">
 		<meta name="renderer" content="ie-stand">
-		<title>scaffolding</title>
+		<title>admin-scaffolding</title>
 		<!-- reset.css start -->
 		<style>
 		@charset "utf-8";html,body,div,h1,h2,h3,h4,h5,h6,p,dl,dt,dd,ol,ul,li,fieldset,form,label,input,legend,table,caption,tbody,tfoot,thead,tr,th,td,textarea,article,aside,audio,canvas,figure,footer,header,mark,menu,nav,section,time,video{margin:0;padding:0}h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:normal}article,aside,dialog,figure,footer,header,hgroup,nav,section,blockquote{display:block}ul,ol{list-style:none}img{border:0 none;vertical-align:top}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:none}table{border-collapse:collapse;border-spacing:0}strong,em,i{font-style:normal;font-weight:normal}ins{text-decoration:underline}del{text-decoration:line-through}mark{background:0}input::-ms-clear{display:none!important}body{font:12px/1.5 \5FAE\8F6F\96C5\9ED1,\5B8B\4F53,'Hiragino Sans GB',STHeiti,'WenQuanYi Micro Hei','Droid Sans Fallback',SimSun,sans-serif;background:#fff}a{text-decoration:none;color:#333}a:hover{text-decoration:underline}
 		</style>
 		<!-- reset.css end -->
-		{{/if_eq}}
-		{{#if_eq proType "mobile"}}
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no, viewport-fit=cover" >
-		<meta name="format-detection" content="telephone=no" >
-		<!-- reset.css start -->
-		<style>
-		@charset "utf-8";*{-webkit-tap-highlight-color:transparent;outline:0;margin:0;padding:0;vertical-align:baseline}body,h1,h2,h3,h4,h5,h6,hr,p,blockquote,dl,dt,dd,ul,ol,li,pre,form,fieldset,legend,button,input,textarea,th,td{margin:0;padding:0;vertical-align:baseline}img{border:0 none;vertical-align:top}i,em{font-style:normal}ol,ul{list-style:none}input,select,button,h1,h2,h3,h4,h5,h6{font-size:100%;font-family:inherit}table{border-collapse:collapse;border-spacing:0}a{text-decoration:none;color:#666}body{margin:0 auto;min-width:320px;max-width:640px;height:100%;font-size:14px;fon-family:-apple-system,Helvetica,sans-serif;line-height:1.5;color:#666;-webkit-text-size-adjust:100%!important;text-size-adjust:100%!important}input[type="text"],textarea{-webkit-appearance:none;-moz-appearance:none;appearance:none}
-		</style>
-		<!-- reset.css end -->
-		<!-- lib-flexible.js start -->
-		<script>
-		!function(e,t){function n(){t.body?t.body.style.fontSize=12*o+"px":t.addEventListener("DOMContentLoaded",n)}function d(){var e=i.clientWidth/10;i.style.fontSize=e+"px"}var i=t.documentElement,o=e.devicePixelRatio||1;if(n(),d(),e.addEventListener("resize",d),e.addEventListener("pageshow",function(e){e.persisted&&d()}),o>=2){var a=t.createElement("body"),s=t.createElement("div");s.style.border=".5px solid transparent",a.appendChild(s),i.appendChild(a),1===s.offsetHeight&&i.classList.add("hairlines"),i.removeChild(a)}}(window,document);      
-		</script>
-		<!-- lib-flexible.js end -->    
-		{{/if_eq}}
 	</head>
 	<body>
-		{{#if_eq proType "mobile"}}
-		{{#WXShare}}
-		<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
-		{{/WXShare}}
-		{{#Moblink}}
-		<script src="//f.moblink.mob.com/3.0.1/moblink.js?appkey='your appid'"></script>
-		{{/Moblink}}
-		{{/if_eq}}
 		<div id="app"></div>
 		<!-- built files will be auto injected -->
 	</body>

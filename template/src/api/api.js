@@ -1,13 +1,12 @@
 import axios from 'axios'
-{{#if_eq proType "admin"}}
 import { Message } from 'element-ui'
 import store from '../store'
 import Common from '@/utils/common'
-{{/if_eq}}
+
 const instance = axios.create({
 	timeout: 15000
 })
-{{#if_eq proType "admin"}}
+
 // request拦截器
 instance.interceptors.request.use(config => {
 	if (store.getters.token) {
@@ -46,7 +45,6 @@ instance.interceptors.response.use(
 		return Promise.reject(error)
 	}
 )
-{{/if_eq}}
 const API = {
 	get (url, params, callback) {
 		return new Promise((resolve, reject) => {

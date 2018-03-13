@@ -1,12 +1,12 @@
-# scaffolding
+# admin-scaffolding
 
-> A minimal vue mobile & admin template with Element UI & axios & permission control & eslint & mockjs
+> A minimal vue admin template with Element UI & axios & permission control & eslint & mockjs
 
 ## Build Setup
 
 ``` bash
 # vue-cli init
-vue init ztjy-fe/scaffolding project-name
+vue init ztjy-fe/admin-scaffolding project-name
 
 # install dependencies
 npm install

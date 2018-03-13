@@ -1,4 +1,4 @@
-{{#if_eq proType "admin"}}
+
 import { USER_TOKEN } from '@/maps/constants'
 
 // 引入szyutils公用工具库
@@ -19,7 +19,3 @@ export default {
 		return removeCookie(USER_TOKEN)
 	}
 }
-{{/if_eq}}
-{{#if_eq proType "mobile"}}
-export default {}
-{{/if_eq}}
