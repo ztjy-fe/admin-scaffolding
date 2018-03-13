@@ -10,7 +10,7 @@
 				v-for="route in $store.state.Tabs.list"
 				:key="route.path"
 				:label="route.name"
-				:name="route.path">{{route.name}}
+				:name="route.path">\{{route.name}}
 			</el-tab-pane>
 		</el-tabs>
 	</div>
