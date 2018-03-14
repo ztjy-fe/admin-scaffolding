@@ -35,7 +35,7 @@ module.exports = {
 		},
 		"tabs":{
 			"type": "confirm",
-			"message": "Use tabs to load router?"
+			"message": "Use dynamic tabs to load router view?"
 		}
 	},
 	"filters": {
