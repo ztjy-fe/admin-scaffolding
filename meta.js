@@ -39,8 +39,8 @@ module.exports = {
 		}
 	},
 	"filters": {
-		"src/assets/images/lazyload/*": "VueLazyload"
-		"src/store/modules/tabs.js": "tabs"
+		"src/assets/images/lazyload/*": "VueLazyload",
+		"src/store/modules/tabs.js": "tabs",
 		"src/view/layout/components/Tabs.vue": "tabs"
 	},
 	"completeMessage": "To get started:\n\n  {{^inPlace}}cd {{destDirName}}\n  {{/inPlace}}npm install\n  npm run dev\n\nDocumentation can be found at https://github.com/ztjy-fe/scaffolding"
