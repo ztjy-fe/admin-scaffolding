@@ -1,6 +1,8 @@
 <template>
 	<section class="app-main">
+		{{#tabs}}
 		<tabs></tabs>
+		{{/tabs}}
 		<transition name="fade" mode="out-in">
 			<keep-alive>
 				<router-view></router-view>
@@ -10,11 +12,12 @@
 </template>
 
 <script>
+{{#tabs}}
 import Tabs from '@/views/layout/components/Tabs.vue'
 import { mapActions } from 'vuex'
-
+{{/tabs}}
 export default {
-	name: 'AppMain',
+	name: 'AppMain'{{#tabs}},
 	components: {
 		Tabs
 	},
@@ -35,6 +38,6 @@ export default {
 		$route (to, from) {
 			this.onUpdateTabs()
 		}
-	}
+	}{{/tabs}}
 }
 </script>
