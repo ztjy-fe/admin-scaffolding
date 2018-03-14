@@ -1,5 +1,5 @@
 <template>
-	<div class="app-wrapper" :class="{hideSidebar:!sidebar.opened}">
+	<div class="app-wrapper" :class="{'hide-sidebar':!sidebar.opened}">
 		<div class="app-header">
 			<span>后台管理系统</span>
 			<el-dropdown class="avatar-container" trigger="click">
