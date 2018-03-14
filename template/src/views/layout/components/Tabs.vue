@@ -57,6 +57,6 @@ export default {
 
 <style lang="scss" scoped>
 	.tabs{
-		padding: 0px 26px;
+		padding: 0px 15px;
 	}
 </style>

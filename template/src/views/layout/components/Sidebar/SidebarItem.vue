@@ -2,17 +2,15 @@
 	<div class="menu-wrapper">
 		<template v-for="item in routes" v-if="!item.hidden && item.children">
 			<router-link v-if="item.children.length===1 && !item.children[0].children && !item.alwaysShow" :to="item.path + '/'+item.children[0].path" :key="item.children[0].name">
-				<el-menu-item :index="item.path+'/'+item.children[0].path" :class="{'submenu-title-noDropdown':!isNest}">
+				<el-menu-item :index="item.path+'/'+item.children[0].path" class="submenu-title-no-ropdown">
 					<i v-if="item.icon" :class="item.icon"></i>
-					<span class="text" v-if="item.children[0].meta && item.children[0].meta.title">
-							\{{item.children[0].meta.title}}
-					</span>
+					<span class="text" v-if="item.children[0].meta && item.children[0].meta.title">\{{item.children[0].meta.title}}</span>
 				</el-menu-item>
 			</router-link>
 
 			<el-submenu v-else :index="item.name || item.path" :key="item.name">
 				<template slot="title">
-					<i    v-if="item.icon" :class="item.icon"></i>
+					<i v-if="item.icon" :class="item.icon"></i>
 					<span v-if="item.meta && item.meta.title" class="text">\{{item.meta.title}}</span>
 				</template>
 
@@ -36,21 +34,17 @@ export default {
 	props: {
 		routes: {
 			type: Array
-		},
-		isNest: {
-			type: Boolean,
-			default: false
 		}
 	}
 }
 </script>
 
 <style lang="scss" scoped>
-.hideSidebar .menu-indent{
-  display: block;
-  text-indent: 10px;
+.hide-sidebar .menu-indent{
+	display: block;
+	text-indent: 10px;
 }
 .text{
-  margin-left: 40px;
+	margin-left: 20px;
 }
 </style>

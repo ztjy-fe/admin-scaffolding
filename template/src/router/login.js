@@ -19,25 +19,25 @@ export default [{
 }, {
 	path: '/form',
 	component: Layout,
-	icon: 'fa fa-user',
+	icon: 'el-icon-menu',
 	children: [{
 		path: 'index',
 		name: 'Form',
 		component: _import('form/index'),
 		meta: {
-			title: '菜单一'
+			title: '一级菜单一'
 		}
 	}]
 }, {
 	path: '/table',
 	component: Layout,
-	icon: 'fa fa-comment',
+	icon: 'el-icon-menu',
 	children: [{
 		path: 'index',
 		name: 'Table',
 		component: _import('form/index'),
 		meta: {
-			title: '菜单二'
+			title: '一级菜单二'
 		}
 	}]
 }]
