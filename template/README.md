@@ -5,13 +5,16 @@
 ## Build Setup
 
 ``` bash
-# vue-cli init
-vue init ztjy-fe/admin-scaffolding project-name
+# szy-cli install
+npm install -g szy-cli
+
+# szy-cli create
+szy create project-name
 
 # install dependencies
 npm install
 
-# serve with hot reload at localhost:8080
+# serve with hot reload at localhost:8586
 npm run dev
 
 # build for production with minification
