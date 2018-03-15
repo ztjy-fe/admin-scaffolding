@@ -1,6 +1,6 @@
-### 自定义vue-cli模板
+### admin-scaffolding脚手架
 
-在使用vue-cli的过程中，常用的webpack模板只为我们提供最基础的内容，但每次需要新建一个项目的时候就需要把之前项目的一些配置都搬过来，这样就造成挺大的不方便，如果是作为一个团队，那么维护一个通用的模板，我认为是挺有必要的。  
+在使用vue-cli的过程中，常用的webpack模板只为我们提供最基础的内容，但每次需要新建一个项目的时候就需要把之前项目的一些配置都搬过来，这样就造成挺大的不方便，作为一个团队，维护一个通用的模板，是很有必要的。  
 
 关于vue-cli的源码分析可以参考下这个文章[从vue-cli源码学习如何写模板](https://github.com/dwqs/blog/issues/56 )  
 
@@ -49,29 +49,37 @@
 		"type": "string",
 		"message": "Author"
 	},
-	"mockJS":{
+	"VueLazyload":{
 		"type": "confirm",
-		"message": "Install mockjs?"
+		"message": "是否安装图片延迟加载插件VueLazyload？"
+	},
+	"fundebug":{
+		"type": "confirm",
+		"message": "是否安装JavaScript错误监控插件fundebug.js？"
+	},
+	"tabs":{
+		"type": "confirm",
+		"message": "是否采用tabs形式加载路由组件？"
 	}
 	...
 }
 
 ```
-所有的用户输入完成之后, ``template`` 目录下的所有文件将会用 ``Handlebars``（[了解相关的语法点这里](http://handlebarsjs.com/)） 进行渲染. 用户输入的数据会作为模板渲染时的使用数据,例如，在``cmd``选择使用``mockjs``后，
+所有的用户输入完成之后, ``template`` 目录下的所有文件将会用 ``Handlebars``（[了解相关的语法点这里](http://handlebarsjs.com/)） 进行渲染. 用户输入的数据会作为模板渲染时的使用数据,例如，在``cmd``选择使用``VueLazyload``后，
 
 ```
-"mockJS":{
-	"type": "confirm",
-	"message": "Install mockjs?"
-},
+	"VueLazyload":{
+		"type": "confirm",
+		"message": "是否安装图片延迟加载插件VueLazyload？"
+	}
 ```
 
-安装过程中，就会询问是否安装``mockjs``了
+安装过程中，就会询问是否安装``VueLazyload``插件
 
 
 #### helper
 
-上面的``if_eq``，还有源码中的``unless_eq``是原本vue cli中注册的那个辅助函数，在vue-cli中的generate.js：
+上面的``if_eq``，还有源码中的``unless_eq``是原本vue-cli中注册的辅助函数，在vue-cli中的generate.js：
 
 ```
 # vue-cli/lib/generate.js
@@ -109,7 +117,7 @@ return a === b
 ``filters`` 是根据条件过滤文件，源码:
 ```
  "filters": {
-	"src/mock/**/*": "mockJS"  //例如上面的 mockJS 为true的时候，就会加入这个目录
+	"src/assets/images/lazyload/*": "VueLazyload"  //例如上面的 VueLazyload 为true的时候，就会加入这个目录
 }
 ```
 后续的话只需要将自己需要的文件跟文件夹，加入到``template/src``
@@ -117,7 +125,7 @@ return a === b
 最后,提交到github自己的分支上，就可以使用了
 
 ```
-vue init ztjy-fe/admin-scaffolding project-name
+szy create project-name
 
 ```
 #### github地址
