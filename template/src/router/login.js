@@ -26,14 +26,14 @@ export default [{
 	children: [{
 		path: 'auth',
 		name: 'Auth',
-		component: _import('form/index'),
+		component: _import('test/index'),
 		meta: {
 			title: '权限管理'
 		}
 	}, {
 		path: 'role',
 		name: 'Role',
-		component: _import('form/index'),
+		component: _import('test/index'),
 		meta: {
 			title: '角色管理'
 		}
@@ -48,14 +48,14 @@ export default [{
 	children: [{
 		path: 'baseinfo',
 		name: 'UserInfo',
-		component: _import('form/index'),
+		component: _import('test/index'),
 		meta: {
 			title: '基本信息'
 		}
 	}, {
 		path: 'role',
 		name: 'UserRole',
-		component: _import('form/index'),
+		component: _import('test/index'),
 		meta: {
 			title: '角色权限'
 		}
