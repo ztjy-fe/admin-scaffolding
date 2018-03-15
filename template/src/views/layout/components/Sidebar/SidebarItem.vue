@@ -44,7 +44,4 @@ export default {
 	display: block;
 	text-indent: 10px;
 }
-.text{
-	margin-left: 20px;
-}
 </style>
