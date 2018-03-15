@@ -13,29 +13,29 @@ module.exports = {
 		"name": {
 			"type": "string",
 			"required": true,
-			"message": "Project name"
+			"message": "项目名称"
 		},
 		"description": {
 			"type": "string",
 			"required": false,
-			"message": "Project description",
+			"message": "项目描述信息",
 			"default": "A Vue.js project"
 		},
 		"author": {
 			"type": "string",
-			"message": "Author"
+			"message": "作者"
 		},
 		"VueLazyload":{
 			"type": "confirm",
-			"message": "Install VueLazyload?"
+			"message": "是否安装图片延迟加载插件VueLazyload？"
 		},
 		"fundebug":{
 			"type": "confirm",
-			"message": "Install fundebug to monitor javascript?"
+			"message": "是否安装JavaScript错误监控插件fundebug.js？"
 		},
 		"tabs":{
 			"type": "confirm",
-			"message": "Use dynamic tabs to load router view?"
+			"message": "是否采用tabs形式加载路由组件？"
 		}
 	},
 	"filters": {
@@ -43,5 +43,5 @@ module.exports = {
 		"src/store/modules/tabs.js": "tabs",
 		"src/views/layout/components/Tabs.vue": "tabs"
 	},
-	"completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://github.com/ztjy-fe/admin-scaffolding"
+	"completeMessage": "请按步骤运行以下命令:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\n文档说明见https://github.com/ztjy-fe/admin-scaffolding"
 };
