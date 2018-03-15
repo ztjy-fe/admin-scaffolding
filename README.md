@@ -5,18 +5,14 @@
 关于vue-cli的源码分析可以参考下这个文章[从vue-cli源码学习如何写模板](https://github.com/dwqs/blog/issues/56 )  
 
 
-``vuejs-templates/webpack``目录如下，
+``ztjy-fe/admin-scaffolding``目录如下，
 
 ```
 │  .gitignore
-│  circle.yml
-│  deploy-docs.sh
 │  LICENSE
 │  meta.js   //该文件必须导出为一个对象, 用于定义模板的 meta 信息
 │  package.json
 │  README.md
-│  test.sh
-├─docs  // 一些介绍该模板一些模块的文档
 └─template  //模板的内容
 ```
 #### meta.js
