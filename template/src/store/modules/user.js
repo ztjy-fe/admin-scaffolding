@@ -33,7 +33,7 @@ const User = {
 					password: userInfo.password
 				}, response => {
 					const userToken = response.token
-					Common.setCookie(USER_TOKEN, userToken)
+					Common.setCookie(USER_TOKEN, userToken, 10)
 					commit('SET_TOKEN', userToken)
 					resolve()
 				})

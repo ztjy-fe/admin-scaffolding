@@ -16,9 +16,9 @@ const SideBar = {
 	mutations: {
 		TOGGLE_SIDEBAR: state => {
 			if (state.sidebar.opened) {
-				Common.setCookie('sidebarStatus', 1)
+				Common.setCookie('sidebarStatus', 1, 10)
 			} else {
-				Common.setCookie('sidebarStatus', 0)
+				Common.setCookie('sidebarStatus', 0, 10)
 			}
 			state.sidebar.opened = !state.sidebar.opened
 		}

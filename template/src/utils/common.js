@@ -8,8 +8,8 @@ export default {
 		return getCookie(name)
 	},
 
-	setCookie (name, value) {
-		return setCookie(name, value, 10)
+	setCookie (name, value, days) {
+		return setCookie(name, value, days)
 	},
 
 	removeCookie (name) {
