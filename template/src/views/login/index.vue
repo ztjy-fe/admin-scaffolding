@@ -1,25 +1,22 @@
 <template>
 	<div class="login-container">
-		<el-form autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left" label-width="0px"
-			class="card-box login-form">
+		<el-form class="card-box login-form" autoComplete="on" :model="loginForm" :rules="loginRules" ref="loginForm" label-position="left">
 			<h3 class="title">szy-admin</h3>
-			<el-form-item prop="username">
-				<span class="svg-container svg-container_login">
-				</span>
-				<el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="用户名" />
+			<el-form-item prop="username" class="login-form-item">
+				<i class="fa fa-user"></i>
+				<el-input name="username" type="text" v-model="loginForm.username" autoComplete="on" placeholder="用户名" class="login-form-input" />
 			</el-form-item>
-			<el-form-item prop="password">
-				<span class="svg-container"></span>
-				<el-input name="password" :type="pwdType" @keyup.enter.native="handleLogin" v-model="loginForm.password" autoComplete="on"
-					placeholder="密码"></el-input>
-					<span class="show-pwd" @click="showPwd"></span>
+
+			<el-form-item prop="password" class="login-form-item">
+				<i class="fa fa-lock"></i>
+				<el-input name="password" :type="pwdType" v-model="loginForm.password" autoComplete="on"
+				placeholder="密码" class="login-form-input" @keyup.enter.native="submitForm('loginForm')"/>
+				<i class="fa fa-eye" :class="{'fa-eye-slash': !pwdType}" @click='showPwd'></i>
 			</el-form-item>
-			<el-form-item>
-				<el-button type="primary" style="width:100%;" :loading="loading" @click.native.prevent="handleLogin">登录</el-button>
-			</el-form-item>
-			<div class="tips">
-				<span style="margin-right:20px;">用户名: admin</span>
-				<span> 密码: admin</span>
+
+			<div class="buttom-btn">
+				<el-button type="primary" @click="submitForm('loginForm')" :loading="loading">登录</el-button>
+				<el-button @click="resetForm('loginForm')">重置</el-button>
 			</div>
 		</el-form>
 	</div>
@@ -55,8 +52,13 @@ export default {
 				this.pwdType = 'password'
 			}
 		},
-		handleLogin () {
-			this.$refs.loginForm.validate(valid => {
+		resetForm (formName) {
+			// this.$refs[formName].resetFields()
+			this.loginForm.username = ''
+			this.loginForm.password = ''
+		},
+		submitForm (formName) {
+			this.$refs[formName].validate(valid => {
 				if (valid) {
 					this.loading = true
 					this.login(this.loginForm).then(() => {
@@ -75,84 +77,87 @@ export default {
 }
 </script>
 
-<style rel="stylesheet/scss" lang="scss">
-	$bg:#2d3a4b;
-	$dark_gray:#889aa4;
-	$light_gray:#eee;
-
+<style lang="scss">
 	.login-container {
-		position: fixed;
-		height: 100%;
-		width:100%;
-		background-color: $bg;
-		input:-webkit-autofill {
-			-webkit-box-shadow: 0 0 0px 1000px #293444 inset !important;
-			-webkit-text-fill-color: #fff !important;
-		}
-		input {
-			background: transparent;
-			border: 0px;
-			-webkit-appearance: none;
-			border-radius: 0px;
-			padding: 12px 5px 12px 15px;
-			color: $light_gray;
-			height: 47px;
-		}
-		.el-input {
-			display: inline-block;
-			height: 47px;
-			width: 85%;
-		}
-		.tips {
-			font-size: 14px;
-			color: #fff;
-			margin-bottom: 10px;
-		}
-		.svg-container {
-			padding: 6px 5px 6px 15px;
-			color: $dark_gray;
-			vertical-align: middle;
-			width: 30px;
-			display: inline-block;
-			&_login {
-				font-size: 20px;
-			}
-		}
-		.title {
-			font-size: 26px;
-			font-weight: 400;
-			color: $light_gray;
-			margin: 0px auto 40px auto;
-			text-align: center;
-			font-weight: bold;
-		}
+		height: 100vh;
+		background-color: #2d3a4b;
+
 		.login-form {
 			position: absolute;
 			left: 0;
 			right: 0;
-			width: 400px;
-			padding: 35px 35px 15px 35px;
-			margin: 120px auto;
-		}
-		.el-form-item {
-			border: 1px solid rgba(255, 255, 255, 0.1);
-			background: rgba(0, 0, 0, 0.1);
-			border-radius: 5px;
-			color: #454545;
-		}
-		.show-pwd {
-			position: absolute;
-			right: 10px;
-			top: 7px;
-			font-size: 16px;
-			color: $dark_gray;
-			cursor: pointer;
-			user-select:none;
-		}
-		.thirdparty-button{
-			position: absolute;
-			right: 35px;
-			bottom: 28px;
+			width: 410px;
+			padding: 35px;
+			margin: 200px auto;
+
+			.title{
+				font-size: 26px;
+				font-weight: 400;
+				color: #eee;
+				margin: 0px auto 40px auto;
+				text-align: center;
+				font-weight: bold;
+			}
+
+			.login-form-item {
+				border: 1px solid rgba(255, 255, 255, 0.1);
+				background: rgba(0, 0, 0, 0.1);
+				border-radius: 5px;
+				color: #454545;
+
+				.el-form-item__content{
+					display: flex;
+					align-items: center;
+				}
+			}
+
+			.login-form-input {
+				display: inline-block;
+				height: 47px;
+				width: 80%;
+
+				.el-input__inner{
+					background: transparent !important;
+					border: 0px;
+					-webkit-appearance: none;
+					border-radius: 0px;
+					color: #eee;
+					padding: 12px 5px 12px 15px;
+					height: 47px;
+
+					&:-webkit-autofill {
+						-webkit-box-shadow: 0 0 0px 1000px #293444 inset !important;
+						-webkit-text-fill-color: #fff !important;
+					}
+				}
+			}
+
+			.fa-user,
+			.fa-lock,
+			.fa-eye{
+				padding-left: 15px;
+				padding-right: 5px;
+				color: #889aa4;
+				width: 38px;
+				font-size: 18px;
+				display: inline-block;
+				vertical-align: middle;
+			}
+
+			.fa-eye{
+				padding-left: 5px;
+				padding-right: 15px;
+				cursor: pointer;
+			}
+
+			.buttom-btn{
+				display: flex;
+				justify-content: space-between;
+
+				.el-button{
+					width: 40%;
+				}
+			}
 		}
 	}
 </style>

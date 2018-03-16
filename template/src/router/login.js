@@ -19,7 +19,7 @@ export default [{
 }, {
 	path: '/system',
 	component: Layout,
-	icon: 'el-icon-menu',
+	icon: 'fa fa-bars',
 	meta: {
 		title: '系统管理'
 	},
@@ -41,7 +41,7 @@ export default [{
 }, {
 	path: '/user',
 	component: Layout,
-	icon: 'el-icon-menu',
+	icon: 'fa fa-user',
 	meta: {
 		title: '用户管理'
 	},
