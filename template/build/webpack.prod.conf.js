@@ -83,7 +83,7 @@ const webpackConfig = merge(baseWebpackConfig, {
 		new HtmlWebpackPlugin({
 			// 生成的文件的名称
 			filename: config.build.index,
-			favicon: path.resolve(__dirname, 'favicon.ico'),
+			//favicon: path.resolve(__dirname, 'favicon.ico'),
 			// 使用的模板的名称
 			template: 'index.html',
 			// 把script和link标签放在body底部
