@@ -23,15 +23,9 @@ instance.interceptors.response.use(
 	response => {
 		// returncode为非10000时抛错,可结合自己业务进行修改
 		const res = response.data
-		if (res.returncode !== 10000) {
-			Message({
-				message: res.data,
-				type: 'error',
-				duration: 5 * 1000
-			})
-
-			// 50008:非法的token; 50012:其他客户端登录了;  50014:Token 过期了;可根据实际情况修改
-			if (res.returncode === 50008 || res.returncode === 50012 || res.returncode === 50014) {
+		if (res.returncode !== '10000') {
+			// 50008:非法的token
+			if (res.returncode === '50008') {
 				MessageBox.confirm('你已被登出，可以取消继续留在该页面，或者重新登录', '确定登出', {
 					confirmButtonText: '重新登录',
 					cancelButtonText: '取消',
@@ -41,6 +35,12 @@ instance.interceptors.response.use(
 						// 为了重新实例化vue-router对象 避免bug
 						location.reload()
 					})
+				})
+			} else {
+				Message({
+					message: res.data,
+					type: 'error',
+					duration: 3 * 1000
 				})
 			}
 			return Promise.reject(new Error('error'))
@@ -53,7 +53,7 @@ instance.interceptors.response.use(
 		Message({
 			message: error.message,
 			type: 'error',
-			duration: 5 * 1000
+			duration: 3 * 1000
 		})
 		return Promise.reject(error)
 	}
@@ -64,7 +64,7 @@ const API = {
 			instance.get(url, {
 				params: params
 			}).then((response) => {
-				if (response.data.returncode === 10000) {
+				if (response.data.returncode === '10000') {
 					callback && callback(response.data.body)
 					resolve(response.data.body)
 				} else {
@@ -80,7 +80,7 @@ const API = {
 	post (url, params, callback) {
 		return new Promise((resolve, reject) => {
 			instance.post(url, params).then((response) => {
-				if (response.data.returncode === 10000) {
+				if (response.data.returncode === '10000') {
 					callback && callback(response.data.body)
 					resolve(response.data.body)
 				} else {
