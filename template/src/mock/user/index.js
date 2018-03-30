@@ -6,7 +6,7 @@ export const loginMock = () => {
 	Mock.mock(ApiMaps.SYSTEM.USER.LOGIN, {
 		'returncode': 10000,
 		'message': 'success',
-		'data': {
+		'body': {
 			'token|2': 'admin'
 		}
 	})
@@ -17,7 +17,7 @@ export const getUserInfoMock = () => {
 	Mock.mock(ApiMaps.SYSTEM.USER.INFO, {
 		'returncode': 10000,
 		'message': 'success',
-		'data': {
+		'body': {
 			'token|2': 'admin'
 		}
 	})
@@ -28,6 +28,6 @@ export const logoutMock = () => {
 	Mock.mock(ApiMaps.SYSTEM.USER.LOGOUT, {
 		'returncode': 10000,
 		'message': 'success',
-		'data': {}
+		'body': {}
 	})
 }
