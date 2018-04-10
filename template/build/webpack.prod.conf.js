@@ -49,7 +49,12 @@ const webpackConfig = merge(baseWebpackConfig, {
 				// 配置压缩的行为
 				compress: {
 					// 在删除未使用的变量等时，显示警告信息，默认就是false
-					warnings: false
+					warnings: false,
+					// 删除debugger
+					drop_debugger: true,
+					// 删除console
+					drop_console: true,
+					pure_funcs: ['console.log']
 				}
 			},
       		// 使用 source map 将错误信息的位置映射到模块（这会减慢编译的速度）
