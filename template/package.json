@@ -1,5 +1,5 @@
 {
-	"name": "scaffolding",
+	"name": "admin-scaffolding",
 	"version": "1.0.0",
 	"description": "A Vue.js project",
 	"author": "ztjy-fe",
@@ -14,9 +14,6 @@
 		"axios": "^0.18.0",
 		"babel-polyfill": "^6.26.0",
 		"element-ui": "2.0.8",
-		{{#fundebug}}
-		"fundebug-javascript": "^0.3.4",
-		{{/fundebug}}
 		"mockjs": "^1.0.1-beta3",
 		"normalize.css": "7.0.0",
 		"nprogress": "0.2.0",
@@ -82,7 +79,7 @@
 	},
 	"browserslist": [
 		"> 1%",
-		"last 2 versions",
+		"last 10 versions",
 		"not ie <= 8"
 	]
 }

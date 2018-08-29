@@ -49,10 +49,6 @@
 		"type": "confirm",
 		"message": "是否安装图片延迟加载插件VueLazyload？"
 	},
-	"fundebug":{
-		"type": "confirm",
-		"message": "是否安装JavaScript错误监控插件fundebug.js？"
-	},
 	"tabs":{
 		"type": "confirm",
 		"message": "是否采用tabs形式加载路由组件？"
