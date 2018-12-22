@@ -1,7 +1,7 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
 import User from './modules/user'
-import SideBar from './modules/sideBar'
+import SideBar from './modules/sidebar'
 {{#tabs}}
 import Tabs from './modules/tabs'
 {{/tabs}}
