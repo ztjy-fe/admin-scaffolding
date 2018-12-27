@@ -16,7 +16,7 @@ module.exports = {
 		host: 'localhost',
 		// 开发时候的端口。可以通过环境变量PORT设定。如果端口被占用了，会随机分配一个未被使用的端口
 		port: 8586,
-		// 是否自动打开浏览器
+		// 是否自动打开浏览器`
 		autoOpenBrowser: true,
 		// 下面两个都是浏览器展示错误的方式
 		//  在浏览器是否展示错误蒙层
@@ -63,11 +63,11 @@ module.exports = {
 		 * Source Maps
 		 */
 
-		productionSourceMap: true,
+		productionSourceMap: false,
 		devtool: '#source-map',
 
 		// 是否开启生产环境的gzip压缩
-		productionGzip: false,
+		productionGzip: true,
 		// 开启gzip压缩的文件的后缀名称
 		productionGzipExtensions: ['js', 'css'],
 		

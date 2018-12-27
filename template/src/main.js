@@ -8,7 +8,6 @@ import Vuex from 'vuex'
 import VueLazyload from 'vue-lazyload'
 {{/VueLazyload}}
 import ElementUI from 'element-ui'
-import 'element-ui/lib/theme-chalk/index.css'
 // 全局样式
 import '@/assets/scss/index.scss'
 // 路由鉴权
@@ -29,7 +28,11 @@ Vue.use(VueLazyload, {
 	try: 3
 })
 {{/VueLazyload}}
-Vue.config.productionTip = false
+
+const isDebugMode = process.env.NODE_ENV !== 'production'
+Vue.config.debug = isDebugMode
+Vue.config.devtools = isDebugMode
+Vue.config.productionTip = isDebugMode
 
 /* eslint-disable no-new */
 new Vue({

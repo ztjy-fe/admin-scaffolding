@@ -30,8 +30,7 @@ rm(path.join(config.build.assetsRoot, config.build.assetsSubDirectory), err => {
 		process.stdout.write(stats.toString({
 			colors: true,
 			modules: false,
-			// 使用ts-loader插件时, 设置为true，构建过程中会显示TypeScript errors.
-			children: false,
+			children: false, // 使用ts-loader插件时, 设置为true，构建过程中会显示TypeScript errors.
 			chunks: false,
 			chunkModules: false
 		}) + '\n\n')
